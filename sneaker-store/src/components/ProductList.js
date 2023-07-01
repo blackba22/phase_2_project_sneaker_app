@@ -4,9 +4,10 @@ import axios from 'axios';
 const ProductList = () => {
     const [products, setProducts] = useState([]);
   
+    // Fetch products from the server using Axios
     useEffect(() => {
-        // Fetch products from the server using Axios
-        axios.get('/api/products')
+        axios
+          .get('https://jsonplaceholder.typicode.com/posts')
           .then((response) => {
             setProducts(response.data);
           })
@@ -14,6 +15,7 @@ const ProductList = () => {
             console.log(error);
           });
       }, []);
+      
 
       return (
         <div>
