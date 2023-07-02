@@ -7,7 +7,7 @@ const ProductList = () => {
     // Fetch products from the server using Axios
     useEffect(() => {
         axios
-          .get('https://jsonplaceholder.typicode.com/posts')
+          .get('https://phase-2-project-json-server-irlz.onrender.com/toys')
           .then((response) => {
             setProducts(response.data);
           })
