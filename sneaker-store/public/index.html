@@ -3,14 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome to Brittany's Sneaker Store</title>
+  <title>Sneaker Store</title>
+  <style>
+    .sneaker-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    .sneaker-card img {
+      width: 200px;
+      height: 200px;
+    }
+  </style>
 </head>
 <body>
-  <div id="root"></div>
-  <script src="https://unpkg.com/react@^17.0.0/umd/react.development.js"></script>
-  <script src="https://unpkg.com/react-dom@^17.0.0/umd/react-dom.development.js"></script>
-  <script src="https://unpkg.com/react-router-dom@^5.3.0/umd/react-router-dom.min.js"></script>
-  <script src="App.js"></script>
-</body>
-</html>
+  <div id="sneaker-list"></div>
 
