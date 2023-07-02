@@ -1,26 +1,31 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 
 const Home = () => {
-  const [toys, setToys] = useState([])
-  const testDeployedAPI = async () => {
-let apiResults = await fetch('https://phase-2-project-json-server-irlz.onrender.com/toys')
-.then(res => res.json())
-.then(data => data)
-//.catch(() => (console.log('did not work')))
-console.table(apiResults)
-setToys(apiResults)
+  const [sneakers, setSneakers] = useState([]);
+
+  const fetchSneakers = async () => {
+    try {
+      const response = await fetch('https://phase-2-project-json-server-irlz.onrender.com/toys');
+      const data = await response.json();
+      setSneakers(data);
+    } catch (error) {
+      console.error('Error fetching sneakers:', error);
+    }
   };
 
-  useEffect(testDeployedAPI, []);
+  useEffect(() => {
+    fetchSneakers();
+  }, []);
 
   return (
-  <>
-  <h2>Welcome to Brittany's Sneaker Store!</h2>;
-  {toys.map(toy => (
-    <p key={toy.id}>{toy.name}</p>
-  ))}
-  </>
+    <>
+      <h2>Welcome to Brittany's Sneaker Store!</h2>
+      {sneakers.map(sneaker => (
+        <p key={sneaker.id}>{sneaker.name}</p>
+      ))}
+    </>
   );
 };
 
 export default Home;
+
