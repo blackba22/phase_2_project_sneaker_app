@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 
 const Home = () => {
   const testDeployedAPI = async () => {
@@ -11,7 +11,11 @@ console.table(apiResults)
 
   useEffect(testDeployedAPI, []);
 
-  return <h2>Welcome to Brittany's Sneaker Store!</h2>;
+  return (
+  <>
+  <h2>Welcome to Brittany's Sneaker Store!</h2>;
+  </>
+  );
 };
 
 export default Home;
